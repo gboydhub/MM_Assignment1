@@ -22,16 +22,15 @@ def treat_stain
   sleep 2
 end
 
-in_thread do
-  2.times do
-    wear(1)
-    treat_stain if dirty?
-    wash(70)
-    dry(:elec_beep)
-  end
+live_loop :laundry_1 do
+  wear(1)
+  treat_stain if dirty?
+  wash(80)
+  dry(:elec_beep)
 end
 
-2.times do
+
+live_loop :laundry_2 do
   wear(5)
   treat_stain if dirty?
   wash(90)
