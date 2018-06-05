@@ -1,6 +1,11 @@
 def wear(smell)
-  sample :drum_tom_hi_hard, rate: smell
-  sleep 1
+  if smell >= 10
+    sample :drum_snare_hard
+  else
+    sample :drum_tom_hi_hard, rate: smell
+    sleep 0.1
+    wear(smell + 1)
+  end
 end
 
 def wash(temperature)
