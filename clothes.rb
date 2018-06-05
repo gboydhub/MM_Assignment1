@@ -22,11 +22,13 @@ def treat_stain
   sleep 2
 end
 
-2.times do
-  wear(1)
-  treat_stain if dirty?
-  wash(70)
-  dry(:elec_beep)
+in_thread do
+  2.times do
+    wear(1)
+    treat_stain if dirty?
+    wash(70)
+    dry(:elec_beep)
+  end
 end
 
 2.times do
