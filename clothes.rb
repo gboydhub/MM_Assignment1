@@ -41,3 +41,10 @@ live_loop :laundry_2 do
   wash(90)
   dry(:elec_cymbal)
 end
+
+live_loop :time do
+  sample :drum_bass_hard
+  sleep 0.5
+  sample :drum_snare_hard
+  sleep 0.5
+end
