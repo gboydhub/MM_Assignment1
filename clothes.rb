@@ -1,5 +1,5 @@
-def wear
-  sample :drum_tom_hi_hard
+def wear(smell)
+  sample :drum_tom_hi_hard, rate: smell
   sleep 1
 end
 
@@ -8,13 +8,23 @@ def wash(temperature)
   sleep 1
 end
 
-def dry
-  sample :elec_beep
+def dry(dryer)
+  sample dryer
   sleep 1
 end
 
+def dirty?
+  1 == [1,2].choose
+end
+
+def treat_stain
+  sample :ambi_choir
+  sleep 2
+end
+
 5.times do
-  wear
+  wear(1)
+  treat_stain if dirty?
   wash(70)
-  dry
+  dry(:elec_beep)
 end
