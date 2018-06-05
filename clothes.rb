@@ -3,8 +3,8 @@ def wear
   sleep 1
 end
 
-def wash
-  play 60
+def wash(temperature)
+  play temperature
   sleep 1
 end
 
@@ -15,6 +15,6 @@ end
 
 5.times do
   wear
-  wash
+  wash(70)
   dry
 end
